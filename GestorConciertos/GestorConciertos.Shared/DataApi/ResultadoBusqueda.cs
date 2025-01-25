@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace GestorConciertos.Shared
+namespace GestorConciertos.Shared.DataApi
 {
 
     public class Artist

@@ -1,4 +1,4 @@
-﻿namespace GestorConciertos.Shared
+﻿namespace GestorConciertos.Shared.DataApi
 {
     /*fabrixapi
     public class ConfigurationApi

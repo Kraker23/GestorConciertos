@@ -1,4 +1,4 @@
-﻿using GestorConciertos.Shared;
+﻿using GestorConciertos.Shared.DataApi;
 using Newtonsoft.Json;
 
 namespace GestorConciertos.Services

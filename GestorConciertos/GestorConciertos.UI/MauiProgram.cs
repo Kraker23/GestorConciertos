@@ -1,5 +1,5 @@
 ﻿using GestorConciertos.Services;
-using GestorConciertos.Shared;
+using GestorConciertos.Shared.DataApi;
 using Microsoft.Extensions.Logging;
 using Radzen;
 using System.Net;

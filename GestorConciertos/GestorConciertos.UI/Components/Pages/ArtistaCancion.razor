@@ -1,4 +1,5 @@
-﻿@using GestorConciertos.Shared
+﻿@using GestorConciertos.Shared;
+@using GestorConciertos.Shared.DataApi
 
 <RadzenCard Variant="Variant.Filled" Style="max-width: 420px">
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem">
@@ -8,11 +9,13 @@
             <RadzenText TextStyle="TextStyle.Body1"><b>@cancionArtista?.title</b></RadzenText>
             <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Cantante</RadzenText>
             <RadzenText TextStyle="TextStyle.Body1"><b>@cancionArtista?.artist?.name</b></RadzenText>
-             
         </RadzenStack>
-        
     </RadzenStack>
-    <audio controls="" name="media"> <source src="@cancionArtista.preview" type="audio/mpeg" preload="none"></audio>
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
+        <audio controls="" name="media"> <source src="@cancionArtista.preview" type="audio/mpeg" preload="none"></audio>
+        <RadzenButton Icon="lyrics" />
+        <RadzenButton Icon="star" />
+    </RadzenStack>
 </RadzenCard>
 
 

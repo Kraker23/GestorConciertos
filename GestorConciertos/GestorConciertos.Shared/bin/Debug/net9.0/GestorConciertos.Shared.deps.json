@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "GestorConciertos.Shared/1.0.0": {
+        "runtime": {
+          "GestorConciertos.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GestorConciertos.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

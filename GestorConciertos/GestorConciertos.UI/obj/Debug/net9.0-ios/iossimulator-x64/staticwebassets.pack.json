@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.UI\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\bundle\\GestorConciertos.UI.styles.css",
+      "PackagePath": "staticwebassets\\GestorConciertos.UI.styles.css"
+    },
+    {
+      "Id": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.UI\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.UI\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.UI\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.UI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.GestorConciertos.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.GestorConciertos.UI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.build.GestorConciertos.UI.props",
+      "PackagePath": "build\\GestorConciertos.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.buildMultiTargeting.GestorConciertos.UI.props",
+      "PackagePath": "buildMultiTargeting\\GestorConciertos.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.buildTransitive.GestorConciertos.UI.props",
+      "PackagePath": "buildTransitive\\GestorConciertos.UI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

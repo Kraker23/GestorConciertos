@@ -1,4 +1,5 @@
 ﻿using GestorConciertos.Shared.DataApi;
+using GestorConciertos.Shared.BLInterface;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web;

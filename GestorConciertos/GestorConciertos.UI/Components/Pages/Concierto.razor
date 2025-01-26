@@ -1,0 +1,75 @@
+﻿@page "/concierto"
+
+@using GestorConciertos.Shared
+@using GestorConciertos.Services
+@using GestorConciertos.Shared.DataApi
+@inject IApiClient ApiClient
+
+<h3>Test</h3>
+
+<label>Busqueda de cancion </label>
+
+<InputText type="text" @bind-value="@NombreCancion" />@* onkeypress="@BuscarCancionKey" *@
+<RadzenButton Click="@BuscarCancion" Text="Buscar Canciones"></RadzenButton>
+
+<label> @cargando</label>
+<label> @error</label>
+
+@if (BuscaquedaRealizada != false && resultadoBusqueda != null && resultadoBusqueda.data.Any())
+{
+    <div>
+        <label> Resultados de la busqueda @resultadoBusqueda.total, mostrando @resultadoBusqueda.data.Count()</label>
+        <div class="row">
+            @foreach (var item in resultadoBusqueda.data)
+            {
+                <ArtistaCancion cancionArtista="@item" />
+            }
+        </div>
+    </div>
+}
+
+
+@code {
+  
+    private string? NombreCancion { get; set; }
+    private string error { get; set; }
+    private string cargando { get; set; }
+    public ResultadoBusqueda resultadoBusqueda { get; set; }
+    private bool BuscaquedaRealizada = false;
+
+    protected override Task OnInitializedAsync()
+    {
+        NombreCancion = "Como Camaron Estopa";
+        return base.OnInitializedAsync();
+    }
+
+    public async void BuscarCancion()
+    {
+        if (string.IsNullOrEmpty(NombreCancion))
+        {
+            error = "Introduce un nombre de cancion";
+            StateHasChanged();
+        }
+        else
+        {
+            error = string.Empty;
+            BuscaquedaRealizada = false;
+            cargando = "Cargando...";
+            StateHasChanged();
+            resultadoBusqueda = await ApiClient.GetBusqueda(NombreCancion);
+           // cargando = "Cargado";
+            BuscaquedaRealizada = true;
+            StateHasChanged();
+        }
+    }
+
+    private async void BuscarCancionKey(KeyboardEventArgs keyboardEventArgs)
+    {
+        if (keyboardEventArgs.Key == "Enter" || keyboardEventArgs.Code == "NumpadEnter")
+        {
+            BuscarCancion();
+        }
+    }
+
+}
+

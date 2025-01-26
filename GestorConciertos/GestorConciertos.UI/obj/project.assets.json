@@ -2748,6 +2748,19 @@
           "buildTransitive/net8.0-android34.0/Xamarin.KotlinX.Serialization.Core.Jvm.targets": {}
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -5518,6 +5531,19 @@
         },
         "build": {
           "buildTransitive/net8.0-android34.0/Xamarin.KotlinX.Serialization.Core.Jvm.targets": {}
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -8292,6 +8318,19 @@
           "buildTransitive/net8.0-android34.0/Xamarin.KotlinX.Serialization.Core.Jvm.targets": {}
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -11062,6 +11101,19 @@
         },
         "build": {
           "buildTransitive/net8.0-android34.0/Xamarin.KotlinX.Serialization.Core.Jvm.targets": {}
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -13836,6 +13888,19 @@
           "buildTransitive/net8.0-android34.0/Xamarin.KotlinX.Serialization.Core.Jvm.targets": {}
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -16606,6 +16671,19 @@
         },
         "build": {
           "buildTransitive/net8.0-android34.0/Xamarin.KotlinX.Serialization.Core.Jvm.targets": {}
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -19380,6 +19458,19 @@
           "buildTransitive/net8.0-android34.0/Xamarin.KotlinX.Serialization.Core.Jvm.targets": {}
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -22152,6 +22243,19 @@
           "buildTransitive/net8.0-android34.0/Xamarin.KotlinX.Serialization.Core.Jvm.targets": {}
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -22947,6 +23051,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -23746,6 +23863,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -24541,6 +24671,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -25340,6 +25483,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -26135,6 +26291,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -26934,6 +27103,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -27729,6 +27911,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -28528,6 +28723,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -29323,6 +29531,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -30122,6 +30343,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -30917,6 +31151,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -31716,6 +31963,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -32511,6 +32771,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -33310,6 +33583,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -34107,6 +34393,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -34902,6 +35201,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -35913,6 +36225,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -36878,6 +37203,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -37847,6 +38185,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -38812,6 +39163,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -39781,6 +40145,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -40748,6 +41125,19 @@
           }
         }
       },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        }
+      },
       "GestorConciertos.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -41713,6 +42103,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -42689,6 +43092,19 @@
           "lib/net9.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "GestorConciertos.DM/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "GestorConciertos.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestorConciertos.DM.dll": {}
         }
       },
       "GestorConciertos.Services/1.0.0": {
@@ -47153,6 +47569,11 @@
         "xamarin.kotlinx.serialization.core.jvm.nuspec"
       ]
     },
+    "GestorConciertos.DM/1.0.0": {
+      "type": "project",
+      "path": "../GestorConciertos.DM/GestorConciertos.DM.csproj",
+      "msbuildProject": "../GestorConciertos.DM/GestorConciertos.DM.csproj"
+    },
     "GestorConciertos.Services/1.0.0": {
       "type": "project",
       "path": "../GestorConciertos.Services/GestorConciertos.Services.csproj",
@@ -47166,6 +47587,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0-android35.0": [
+      "GestorConciertos.DM >= 1.0.0",
       "GestorConciertos.Services >= 1.0.0",
       "GestorConciertos.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebView.Maui >= 9.0.0",
@@ -47175,6 +47597,7 @@
       "Radzen.Blazor >= 5.9.0"
     ],
     "net9.0-ios18.1": [
+      "GestorConciertos.DM >= 1.0.0",
       "GestorConciertos.Services >= 1.0.0",
       "GestorConciertos.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebView.Maui >= 9.0.0",
@@ -47184,6 +47607,7 @@
       "Radzen.Blazor >= 5.9.0"
     ],
     "net9.0-maccatalyst18.1": [
+      "GestorConciertos.DM >= 1.0.0",
       "GestorConciertos.Services >= 1.0.0",
       "GestorConciertos.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebView.Maui >= 9.0.0",
@@ -47193,6 +47617,7 @@
       "Radzen.Blazor >= 5.9.0"
     ],
     "net9.0-windows10.0.19041": [
+      "GestorConciertos.DM >= 1.0.0",
       "GestorConciertos.Services >= 1.0.0",
       "GestorConciertos.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebView.Maui >= 9.0.0",
@@ -47238,6 +47663,9 @@
         "net9.0-android35.0": {
           "targetAlias": "net9.0-android",
           "projectReferences": {
+            "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.DM\\GestorConciertos.DM.csproj": {
+              "projectPath": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.DM\\GestorConciertos.DM.csproj"
+            },
             "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.Services\\GestorConciertos.Services.csproj": {
               "projectPath": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.Services\\GestorConciertos.Services.csproj"
             },
@@ -47249,6 +47677,9 @@
         "net9.0-ios18.1": {
           "targetAlias": "net9.0-ios",
           "projectReferences": {
+            "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.DM\\GestorConciertos.DM.csproj": {
+              "projectPath": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.DM\\GestorConciertos.DM.csproj"
+            },
             "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.Services\\GestorConciertos.Services.csproj": {
               "projectPath": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.Services\\GestorConciertos.Services.csproj"
             },
@@ -47260,6 +47691,9 @@
         "net9.0-maccatalyst18.1": {
           "targetAlias": "net9.0-maccatalyst",
           "projectReferences": {
+            "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.DM\\GestorConciertos.DM.csproj": {
+              "projectPath": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.DM\\GestorConciertos.DM.csproj"
+            },
             "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.Services\\GestorConciertos.Services.csproj": {
               "projectPath": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.Services\\GestorConciertos.Services.csproj"
             },
@@ -47271,6 +47705,9 @@
         "net9.0-windows10.0.19041": {
           "targetAlias": "net9.0-windows10.0.19041.0",
           "projectReferences": {
+            "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.DM\\GestorConciertos.DM.csproj": {
+              "projectPath": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.DM\\GestorConciertos.DM.csproj"
+            },
             "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.Services\\GestorConciertos.Services.csproj": {
               "projectPath": "E:\\Code\\GestorConciertos\\GestorConciertos\\GestorConciertos.Services\\GestorConciertos.Services.csproj"
             },

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="GestorConciertos.UI.styles.css" />
     <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/standard-base.css">
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/standard-wcag.css"> <!-- Load WCAG 2.2 AA compliant colors -->
 </head>
 
 <body>
@@ -24,7 +26,7 @@
     </div>
 
     <script src="_framework/blazor.webview.js" autostart="false"></script>
-
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js?v=@(typeof(Radzen.Colors).Assembly.GetName().Version)"></script>
 </body>
 
 </html>

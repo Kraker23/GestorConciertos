@@ -1,9 +1,12 @@
 ﻿using GestorConciertos.Services;
 using GestorConciertos.Shared.DataApi;
+using GestorConciertos.Shared.DataInterface;
 using Microsoft.Extensions.Logging;
 using Radzen;
 using System.Net;
 using System.Net.Http.Headers;
+using GestorConciertos.DM;
+using GestorConciertos.Shared.BLInterface;
 
 namespace GestorConciertos
 {
@@ -20,30 +23,39 @@ namespace GestorConciertos
                 });
 
             builder.Services.AddMauiBlazorWebView();
-
-            /*fabrixapi 
-                HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(ConfigurationApi.URL_Base);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("X-OpenAPIHub-Key",ConfigurationApi.Token);
-            builder.Services.AddScoped(sp => client);
-            */
-
-
-            
-            //https://lyrics.ovh
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(ConfigurationApi.URL_Base)});
-
-            builder.Services.AddScoped<IApiClient, ApiClient>();
-
             builder.Services.AddRadzenComponents();
 
+            //https://lyrics.ovh
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(ConfigurationApi.URL_Base) });
+
+
+            try
+            {
+                builder.Services.AddSingleton<IApiClient, ApiClient>();
+                builder.Services.AddSingleton<DBManagerJsonConfig>(new DBManagerJsonConfig());
+                builder.Services.AddSingleton<ICancionFavoritaData, GestorConciertosDB>();
+                builder.Services.AddSingleton<IConciertoData, GestorConciertosDB>();
+                builder.Services.AddScoped<IDBImportExport, GestorConciertosDB>();
+
+
+                builder.Services.AddScoped<ICancionFavoritaManager, CancionFavoritaManager>();
+                builder.Services.AddScoped<IConciertoManager, ConciertoManager>();
+
+
+
 #if DEBUG
-            builder.Services.AddBlazorWebViewDeveloperTools();
-            builder.Logging.AddDebug();
+                builder.Services.AddBlazorWebViewDeveloperTools();
+                builder.Logging.AddDebug();
 #endif
 
-            return builder.Build();
+                return builder.Build();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return builder.Build();
+
+            }
         }
     }
 }

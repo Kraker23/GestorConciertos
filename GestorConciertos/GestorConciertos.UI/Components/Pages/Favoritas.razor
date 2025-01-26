@@ -1,0 +1,45 @@
+﻿@page "/favoritas"
+
+@using GestorConciertos.Shared
+@using GestorConciertos.Services
+@using GestorConciertos.Shared.DataApi
+@inject ICancionFavoritaManager cancionFavoritaManager
+
+<h3>Test</h3>
+
+<label>Busqueda de cancion </label>
+
+
+<label> @cargando</label>
+<label> @error</label>
+
+@if (favoritas != null && favoritas.Any())
+{
+    <div>
+        <label> Canciones Favoritas @favoritas.Count()</label>
+        <div class="row">
+            @foreach (Cancion item in favoritas)
+            {
+                <CompCancion cancion="@item" />
+            }
+        </div>
+    </div>
+}
+
+
+@code {
+  
+    private string error { get; set; }
+    private string cargando { get; set; }
+    public List<Cancion> favoritas { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        favoritas = cancionFavoritaManager.GetCancionesFavoritas();
+        return base.OnInitializedAsync();
+    }
+
+  
+
+}
+

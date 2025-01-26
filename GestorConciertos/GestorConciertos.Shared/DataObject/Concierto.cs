@@ -11,25 +11,17 @@ namespace GestorConciertos.Shared.DataObject
     {
         public Guid Id { get; set; }
         public string Nombre { get; set; }
+        public string Lugar { get; set; }
+        public bool  esEnsayo { get; set; }
+
         public DateTime Fecha { get; set; }
-
-        public List<Cancion> Cancions { get; set; }
-    }
-    //datos de la Cancion
-    public class Cancion
-    {
-        public Guid Id { get; set; }
-        public string Nombre { get; set; }
-        public string Artista { get; set; }
-        public string Album { get; set; }
-        public string Letra { get; set; }
+        public Concierto()
+        {
+            this.Id = Guid.NewGuid();
+            this.Fecha = DateTime.Now;
+        }
     }
 
-    //Lista de Canciones favoritas, para busquedas rapidas
-    public class Favoritas
-    {
-        public List<Cancion> Cancions { get; set; }
-    }
 
 }
 

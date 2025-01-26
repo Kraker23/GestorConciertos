@@ -73,6 +73,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\GestorConciertos.DM\GestorConciertos.DM.csproj" />
       <ProjectReference Include="..\GestorConciertos.Services\GestorConciertos.Services.csproj" />
       <ProjectReference Include="..\GestorConciertos.Shared\GestorConciertos.Shared.csproj" />
     </ItemGroup>

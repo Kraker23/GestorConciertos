@@ -1,0 +1,29 @@
+﻿@page "/DialogCancionLetra"
+@inject Radzen.DialogService dialogService
+
+
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem"  Style="border: var(--rz-grid-cell-border);">
+        <RadzenFormField Text="Cancion" Variant="Variant.Outlined">
+            <RadzenTextBox @bind-Value="@cancion" />
+            </RadzenFormField>
+        <RadzenFormField Text="Cantante" Variant="Variant.Outlined">
+            <RadzenTextBox @bind-Value="@cantante" />
+            </RadzenFormField>
+     </RadzenStack>
+    <RadzenStack Gap="1rem"  >
+        <RadzenFormField Text="Letra" Variant="Variant.Outlined" >
+            <RadzenTextArea @bind-Value="@letraCancion" Style="field-sizing: content;" aria-label="Auto-resize"/>
+            </RadzenFormField>
+    </RadzenStack>
+@code {
+    [Parameter]
+    public string letraCancion { get; set; }
+    [Parameter]
+    public string cancion { get; set; }
+    [Parameter]
+    public string cantante { get; set; }
+
+    override protected async Task OnInitializedAsync()
+    {
+    }
+}

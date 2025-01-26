@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestorConciertos.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ae0d64cce3e9d9e9c63e1e5ee89098ca298b0af4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ccde6a735b59ac02a23d1ce10905ccb6956c0280")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestorConciertos.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestorConciertos.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,32 +5,29 @@
 @using GestorConciertos.Shared.DataApi
 @inject IApiClient ApiClient
 
-<h3>Test</h3>
-
-<label>Busqueda de cancion </label>
-
-<InputText type="text" @bind-value="@NombreCancion" />@* onkeypress="@BuscarCancionKey" *@
+<RadzenFormField Text="Busqueda de cancion/cantante" Variant="Variant.Outlined" Style="width:500px">
+    <RadzenTextBox @bind-Value="@NombreCancion" />@*  onkeypress="@BuscarCancionKey" *@
+ </RadzenFormField>
 <RadzenButton Click="@BuscarCancion" Text="Buscar Canciones"></RadzenButton>
-
 <label> @cargando</label>
 <label> @error</label>
 
 @if (BuscaquedaRealizada != false && resultadoBusqueda != null && resultadoBusqueda.data.Any())
 {
-    <div>
-        <label> Resultados de la busqueda @resultadoBusqueda.total, mostrando @resultadoBusqueda.data.Count()</label>
-        <div class="row">
+        <div>
+            <label> Resultados de la busqueda @resultadoBusqueda.total, mostrando @resultadoBusqueda.data.Count()</label>
+            <div class="row">
             @foreach (var item in resultadoBusqueda.data)
             {
-                <ArtistaCancion cancionArtista="@item" />
+                        <ArtistaCancion cancionArtista="@item" />
             }
+            </div>
         </div>
-    </div>
 }
 
 
 @code {
-  
+
     private string? NombreCancion { get; set; }
     private string error { get; set; }
     private string cargando { get; set; }
@@ -57,7 +54,7 @@
             cargando = "Cargando...";
             StateHasChanged();
             resultadoBusqueda = await ApiClient.GetBusqueda(NombreCancion);
-           // cargando = "Cargado";
+            // cargando = "Cargado";
             BuscaquedaRealizada = true;
             StateHasChanged();
         }

@@ -35,6 +35,7 @@ namespace GestorConciertos
                 builder.Services.AddSingleton<DBManagerJsonConfig>(new DBManagerJsonConfig());
                 builder.Services.AddSingleton<ICancionFavoritaData, GestorConciertosDB>();
                 builder.Services.AddSingleton<IConciertoData, GestorConciertosDB>();
+                builder.Services.AddSingleton<IConciertoCancionData, GestorConciertosDB>();
                 builder.Services.AddScoped<IDBImportExport, GestorConciertosDB>();
 
 

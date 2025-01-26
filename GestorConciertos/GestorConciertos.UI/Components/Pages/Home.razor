@@ -1,5 +1,44 @@
 ﻿@page "/"
+@using GestorConciertos.Shared
+@using GestorConciertos.Services
+@inject IConciertoData conciertoData
+@inject NavigationManager Navigation
 
-<h1>Hello, world!</h1>
+<label> @cargando</label>
+<label> @error</label>
 
-Welcome to your new app.
+<RadzenButton Icon="add" Text="Crear Concierto" Click="CrearConcierto" />
+@if (conciertos != null && conciertos.Any())
+{
+    <div>
+        <label> Conciertos @conciertos.Count()</label>
+        <div class="row">
+            @foreach (Concierto item in conciertos)
+            {
+                <CompConcierto concierto="@item" /> 
+            }
+        </div>
+    </div>
+}
+
+
+@code {
+
+    private string error { get; set; }
+    private string cargando { get; set; }
+    public List<Concierto> conciertos { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        conciertos = conciertoData.GetConciertos();
+        StateHasChanged();
+        return base.OnInitializedAsync();
+    }
+
+    public void CrearConcierto()
+    {
+        Navigation.NavigateTo($"/concierto");
+    }
+
+}
+

@@ -162,6 +162,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Maui.Controls.resources.dll",
 		"Microsoft.Maui.Controls.resources.dll",
 		"Microsoft.Maui.Controls.resources.dll",
+		"GestorConciertos.DM.dll",
 		"GestorConciertos.Services.dll",
 		"GestorConciertos.Shared.dll",
 		"_Microsoft.Android.Resource.Designer.dll",

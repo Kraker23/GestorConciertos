@@ -13,7 +13,6 @@ namespace GestorConciertos.Shared.DataObject
         public string Nombre { get; set; }
         public string Lugar { get; set; }
         public bool  esEnsayo { get; set; }
-
         public DateTime Fecha { get; set; }
         public Concierto()
         {

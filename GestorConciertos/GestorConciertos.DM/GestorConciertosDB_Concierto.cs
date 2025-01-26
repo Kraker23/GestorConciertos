@@ -40,4 +40,37 @@ namespace GestorConciertos.DM
             this.SaveToFile(this.Conciertos);
         }
     }
+    public partial class GestorConciertosDB : IConciertoCancionData
+    {
+        public ConciertoCancion AddConciertoCancion(ConciertoCancion conciertoCancion)
+        {
+            this.ConciertoCancion.Add(conciertoCancion);
+            this.SaveToFile(this.ConciertoCancion);
+            return conciertoCancion;
+        }
+
+        public List<ConciertoCancion> GetAllCancionesByIdConcierto(Guid IdConcierto)
+        {
+            return ConciertoCancion.FindAll(x => x.IdConcierto == IdConcierto);
+        }
+
+        public ConciertoCancion GetConciertoCancion(Guid IdConciertoCancion)
+        {
+            return ConciertoCancion.Find(x => x.Id == IdConciertoCancion);
+        }
+
+        public void RemoveConciertoCancion(Guid IdConciertoCancion)
+        {
+            ConciertoCancion.RemoveAll(x => x.Id == IdConciertoCancion);
+            this.SaveToFile(this.ConciertoCancion);
+        }
+
+        public ConciertoCancion UpdateConciertoCancion(ConciertoCancion conciertoCancion)
+        {
+            var x = ConciertoCancion.Find(t => t.Id == conciertoCancion.Id);
+            conciertoCancion = ConciertoCancion.Update(x, conciertoCancion);
+            this.SaveToFile(this.ConciertoCancion);
+            return conciertoCancion;
+        }
+    }
 }

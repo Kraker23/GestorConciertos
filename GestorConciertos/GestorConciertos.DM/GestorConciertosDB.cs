@@ -21,5 +21,9 @@ namespace GestorConciertos.DM
         private DBData<Concierto>? conciertos = null;
         public DBData<Concierto> Conciertos => conciertos == null ? this.LoadFromFile(ref this.conciertos) : conciertos;
 
+
+        private DBData<ConciertoCancion>? conciertoCancion = null;
+        public DBData<ConciertoCancion> ConciertoCancion => conciertoCancion == null ? this.LoadFromFile(ref this.conciertoCancion) : conciertoCancion;
+
     }
 }

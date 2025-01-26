@@ -1,4 +1,4 @@
-﻿@using GestorConciertos.Shared;
+﻿ @using GestorConciertos.Shared;
 @using GestorConciertos.Shared.DataApi
 
 @inject ICancionFavoritaManager cancionFavoritaManager;
@@ -6,9 +6,9 @@
 @using Microsoft.JSInterop
 @using System.Text.Json
 @inject DialogService DialogService
-@inject IJSRuntime JSRuntime
+@inject IJSRuntime JSRuntime 
 
-<RadzenCard Variant="Variant.Filled" Style="max-width: 420px">
+ <RadzenCard Variant="Variant.Filled" Style="max-width: 420px">
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem">
         <RadzenImage Path="@cancion?.PictureCantante" Style="width: 100px; height: 100px; border-radius: 50%;" />
         <RadzenStack Gap="0">
@@ -21,10 +21,10 @@
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
         <audio controls="" name="media"> <source src="@cancion.preview" type="audio/mpeg" preload="none"></audio>
         <RadzenButton Icon="lyrics" Click="verLetra"/>
-        <RadzenButton Icon="star" Click="RemoveFavorita" IconColor="@Colors.Danger"/>
+        <RadzenButton Icon="delete" Click="RemoveFavorita" IconColor="@Colors.Danger"/>
     </RadzenStack>
 </RadzenCard>
-
+ 
 
 @code {
     [Parameter]
@@ -34,7 +34,7 @@
     public async void RemoveFavorita()
     {
         cancionFavoritaManager.RemoveCancionFavorita(cancion.Id);
-        
+        //TODO : avisar de que se ha eliminado
     }
 
 

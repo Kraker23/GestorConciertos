@@ -19,12 +19,12 @@ namespace GestorConciertos.Services
             Cancion cancion = new Cancion
             {
                 Id = Guid.NewGuid(),
-                IdCancion = cancionCantante.id,
+                IdCancionApi = cancionCantante.id,
                 Nombre = cancionCantante.title,
-                IdCantante = cancionCantante.artist.id,
+                IdCantanteApi = cancionCantante.artist.id,
                 Cantante = cancionCantante.artist.name,
                 PictureCantante = cancionCantante.artist.picture,
-                IdAlbum = cancionCantante.album.id,
+                IdAlbumApi = cancionCantante.album.id,
                 Album = cancionCantante.album.title,
                 Letra = letra,
                 preview = cancionCantante.preview

@@ -1,0 +1,61 @@
+﻿@using GestorConciertos.Shared;
+@using GestorConciertos.Shared.DataApi
+
+@inject IConciertoData conciertoData;
+@inject IConciertoCancionData conciertoCancionData;
+
+@using Microsoft.JSInterop
+@using System.Text.Json
+@inject DialogService DialogService
+@inject IJSRuntime JSRuntime
+@inject NavigationManager Navigation
+
+<RadzenCard Variant="Variant.Filled" Style="max-width: 420px">
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem">
+        <RadzenStack Gap="0">
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Nombre</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body1"><b>@concierto?.Nombre</b></RadzenText>
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Lugar</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body1"><b>@concierto?.Lugar</b></RadzenText>
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Fecha</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body1"><b>@concierto?.Fecha</b></RadzenText>
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Es Ensayo</RadzenText>
+            <RadzenCheckBox  @bind-Value=@concierto.esEnsayo  /> 
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Canciones</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body1"><b>@cantidadCanciones</b></RadzenText> 
+        </RadzenStack>
+    </RadzenStack>
+     <RadzenStack Gap="0">
+
+         </RadzenStack>
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
+        <RadzenButton Icon="edit" Click="Editar"/>
+        <RadzenButton Icon="delete" Click="Eliminar" IconColor="@Colors.Danger"/>
+    </RadzenStack>
+</RadzenCard> 
+
+
+@code {
+    [Parameter]
+    public GestorConciertos.Shared.DataObject.Concierto concierto { get; set; }
+    public int cantidadCanciones { get; set; }  
+
+    bool value;
+    override protected async Task OnInitializedAsync()
+    {
+        cantidadCanciones = conciertoCancionData.GetAllCancionesByIdConcierto(concierto.Id).Count;
+        await base.OnInitializedAsync();
+    }
+
+    public async void Eliminar()
+    {
+        conciertoData.RemoveConcierto(concierto.Id);
+
+    }
+
+    public async void Editar()
+    {
+        Navigation.NavigateTo($"/concierto/{concierto.Id}");
+    }
+}
+

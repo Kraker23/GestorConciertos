@@ -13,6 +13,7 @@ namespace GestorConciertos.Shared.DataInterface
         void RemoveCancionFavorita(Guid IdCancion);
         Cancion UpdateCancionFavorita(Cancion cancion);
         List<Cancion> GetCancionesFavoritas();
+        List<Cancion> GetCancionesFavoritasRestantes(List<Guid> idCanciones);
         Cancion? GetCancionFavorita(Guid IdCancion);
 
     }

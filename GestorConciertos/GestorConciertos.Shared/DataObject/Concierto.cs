@@ -14,6 +14,7 @@ namespace GestorConciertos.Shared.DataObject
         public string Lugar { get; set; }
         public bool  esEnsayo { get; set; }
         public DateTime Fecha { get; set; }
+        public string Fullname { get { return $"{Nombre} - {Lugar}"; } }
         public Concierto()
         {
             this.Id = Guid.NewGuid();

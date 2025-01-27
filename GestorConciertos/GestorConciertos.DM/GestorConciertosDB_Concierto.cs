@@ -10,7 +10,7 @@ namespace GestorConciertos.DM
 {
     public partial class GestorConciertosDB : IConciertoData
     {
-       
+
         public Concierto AddConcierto(Concierto concierto)
         {
             this.Conciertos.Add(concierto);
@@ -29,6 +29,15 @@ namespace GestorConciertos.DM
             this.SaveToFile(this.Conciertos);
             return concierto;
         }
+
+        public Concierto SaveConcierto(Concierto concierto)
+        {
+            var x = Conciertos.Find(t => t.Id == concierto.Id);
+            if (x == null) { concierto = AddConcierto(concierto); }
+            else { concierto = UpdateConcierto(concierto); }
+            this.SaveToFile(this.Conciertos);
+            return concierto;
+        }
         public Concierto? GetConcierto(Guid IdConcierto)
         {
             return Conciertos.Find(x => x.Id == IdConcierto);
@@ -39,6 +48,8 @@ namespace GestorConciertos.DM
             Conciertos.RemoveAll(x => x.Id == IdConcierto);
             this.SaveToFile(this.Conciertos);
         }
+
+
     }
     public partial class GestorConciertosDB : IConciertoCancionData
     {
@@ -72,5 +83,28 @@ namespace GestorConciertos.DM
             this.SaveToFile(this.ConciertoCancion);
             return conciertoCancion;
         }
+
+        public ConciertoCancion SaveConciertoCancion(ConciertoCancion conciertoCancion)
+        {
+            var x = ConciertoCancion.Find(t => t.Id == conciertoCancion.Id);
+            if (x == null) { conciertoCancion = AddConciertoCancion(conciertoCancion); }
+            else { conciertoCancion = UpdateConciertoCancion(conciertoCancion); }
+            this.SaveToFile(this.ConciertoCancion);
+            return conciertoCancion;
+        }
+
+        public List<ConciertoCancion> SaveConciertoCanciones(List<ConciertoCancion> conciertoCanciones)
+        {
+            foreach (ConciertoCancion cc in conciertoCanciones)
+            {
+                var x = ConciertoCancion.Find(t => t.Id == cc.Id);
+                if (x == null) { AddConciertoCancion(cc); }
+                else { UpdateConciertoCancion(cc); }
+            }
+            this.SaveToFile(this.ConciertoCancion);
+            return conciertoCancion;
+        }
+
+        
     }
 }

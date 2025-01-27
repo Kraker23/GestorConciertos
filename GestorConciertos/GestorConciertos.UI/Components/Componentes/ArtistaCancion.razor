@@ -2,6 +2,7 @@
 @using GestorConciertos.Shared.DataApi
 @inject ICancionFavoritaManager cancionFavoritaManager;
 @inject IApiClient apiClient;
+@inject NotificationService NotificationService
 
 @using Microsoft.JSInterop
 @using System.Text.Json
@@ -21,7 +22,7 @@
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
         <audio controls="" name="media"> <source src="@cancionArtista.preview" type="audio/mpeg" preload="none"></audio>
         <RadzenButton Icon="lyrics" Click="BuscarLetraFavorita"/>
-        <RadzenButton Icon="star" Click="AddFavorita"/>
+        <RadzenButton Icon="star" Click="AddFavorita" /> @* IconColor="@colorFavorita"  *@
     </RadzenStack>
 </RadzenCard>
 
@@ -31,14 +32,21 @@
     public CancionCantante cancionArtista { get; set; }
 
     private string letra { get; set; }
+    //Color colorFavorita { get; set; }
 
+    protected override void OnInitialized()
+    {
+      //  colorFavorita = Colors.White;
+    }
     public async void AddFavorita()
     {
-        //TODO : avisar de que se ha añadido
         await BuscarLetraFavorita(false);
         if (!string.IsNullOrEmpty(letra))
         {
             cancionFavoritaManager.AddCancionFavorita(cancionArtista, letra);
+            //colorFavorita = Colors.Yellow;
+            NotificationMessage notifyMessage = new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Añadida a Favoritas", Detail = "Cancion Añadida a Favoritas", Duration = 4000 };
+            NotificationService.Notify(notifyMessage);
         }
         else
         {

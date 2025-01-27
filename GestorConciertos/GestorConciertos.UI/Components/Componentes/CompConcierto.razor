@@ -3,7 +3,7 @@
 
 @inject IConciertoData conciertoData;
 @inject IConciertoCancionData conciertoCancionData;
-
+@inject NotificationService NotificationService
 @using Microsoft.JSInterop
 @using System.Text.Json
 @inject DialogService DialogService
@@ -20,22 +20,25 @@
             <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Fecha</RadzenText>
             <RadzenText TextStyle="TextStyle.Body1"><b>@concierto?.Fecha</b></RadzenText>
             <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Es Ensayo</RadzenText>
-            <RadzenCheckBox  @bind-Value=@concierto.esEnsayo  /> 
+            <RadzenCheckBox  @bind-Value=@concierto.esEnsayo  Disabled="true" /> 
             <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Canciones</RadzenText>
             <RadzenText TextStyle="TextStyle.Body1"><b>@cantidadCanciones</b></RadzenText> 
         </RadzenStack>
     </RadzenStack>
-     <RadzenStack Gap="0">
+    <RadzenStack Gap="0">
 
-         </RadzenStack>
-    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
-        <RadzenButton Icon="edit" Click="Editar"/>
+    </RadzenStack>
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">        
+        <RadzenButton Icon="visibility" Click="Ver" />
+        <RadzenButton Icon="edit" Click="Editar" />
         <RadzenButton Icon="delete" Click="Eliminar" IconColor="@Colors.Danger"/>
     </RadzenStack>
 </RadzenCard> 
 
 
 @code {
+
+
     [Parameter]
     public GestorConciertos.Shared.DataObject.Concierto concierto { get; set; }
     public int cantidadCanciones { get; set; }  
@@ -49,13 +52,26 @@
 
     public async void Eliminar()
     {
-        conciertoData.RemoveConcierto(concierto.Id);
+        bool? result= await DialogService.Confirm("¿Estás seguro de que quieres eliminar el concierto?", "Eliminar Concierto", new ConfirmOptions() { OkButtonText = "Si", CancelButtonText = "No" });
+        if (result.HasValue  && result.Value)
+        { conciertoData.RemoveConcierto(concierto.Id);
+            NotificationMessage notifyMessage = new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Eliminado el Concierto", Duration = 4000 };
+            NotificationService.Notify(notifyMessage);
+        }
 
     }
 
     public async void Editar()
     {
-        Navigation.NavigateTo($"/concierto/{concierto.Id}");
+        Navigation.NavigateTo($"/editConcierto/{concierto.Id}");
+    }
+
+    public async void Ver()
+    {
+        Navigation.NavigateTo($"/Ver/{concierto.Id}");
     }
 }
 

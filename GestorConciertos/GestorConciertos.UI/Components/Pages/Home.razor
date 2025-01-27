@@ -13,7 +13,7 @@
     <div>
         <label> Conciertos @conciertos.Count()</label>
         <div class="row">
-            @foreach (Concierto item in conciertos)
+            @foreach (Concierto item in conciertos.OrderByDescending(x=>x.Fecha))
             {
                 <CompConcierto concierto="@item" /> 
             }
@@ -37,7 +37,8 @@
 
     public void CrearConcierto()
     {
-        Navigation.NavigateTo($"/concierto");
+        //Navigation.NavigateTo($"/editConcierto");
+        Navigation.NavigateTo($"/editConcierto/{Guid.NewGuid()}");
     }
 
 }

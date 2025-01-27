@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestorConciertos.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccde6a735b59ac02a23d1ce10905ccb6956c0280")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ef24b227e86b32f29c58b237ba2d7dc3b293267")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestorConciertos.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestorConciertos.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

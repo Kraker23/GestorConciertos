@@ -34,6 +34,12 @@ namespace GestorConciertos.DM
             this.SaveToFile(this.Canciones);
         }
 
+
+
+        public List<Cancion> GetCancionesFavoritasRestantes(List<Guid> idCanciones)
+        {
+            return Canciones.Where(x => !idCanciones.Contains(x.Id)).ToList();
+        }
         public List<Cancion> GetCancionesFavoritas()
         {
             return Canciones;

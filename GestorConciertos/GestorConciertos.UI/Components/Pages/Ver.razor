@@ -1,0 +1,72 @@
+﻿@page "/Ver/{Id:guid}"
+
+@using GestorConciertos.Shared
+@using GestorConciertos.Services
+@using GestorConciertos.Shared.DataApi
+@inject IApiClient ApiClient;
+
+@inject IConciertoData conciertoData;
+@inject IConciertoCancionData conciertoCancionData;
+@inject ICancionFavoritaData cancionData;
+
+@if (concierto != null)
+{
+    <RadzenText TextStyle="TextStyle.H3" TextAlign="TextAlign.Center">
+            <RadzenIcon Icon="radio" class="rz-me-1" /><b>@($"{concierto.Nombre} - {concierto.Lugar} - {concierto.Fecha}")</b>
+    </RadzenText>
+
+        <RadzenDataList PageSize="1" WrapItems="true" AllowPaging="true"  Data="@canciones" TItem="Cancion" PagerPosition="PagerPosition.Top">
+            <Template Context="cancion">
+                <RadzenCard >
+                    <RadzenRow>
+                        <RadzenColumn Size="8" class="rz-text-truncate">                                   
+                                <b>@(cancion.FullName)</b>
+                        </RadzenColumn>
+                        <RadzenColumn Size="4" class="rz-text-align-end">
+                                <RadzenImage Path="@cancion.PictureCantante" Style="width: 50px; height: 50px; border-radius: 50%" />
+                        </RadzenColumn>
+                    </RadzenRow>
+                    <hr style="border: none; background-color: var(--rz-text-disabled-color); height: 1px; margin: 1rem 0;" />
+                    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem">
+                            <RadzenTextArea @bind-Value="@cancion.Letra" Style="field-sizing: content;border: none;" aria-label="Auto-resize" />
+                    </RadzenStack>
+                </RadzenCard>
+            </Template>
+        </RadzenDataList>
+
+    <RadzenCard class="rz-mt-4">
+            <b>@canciones.Count() Canciones</b>
+    </RadzenCard>
+}
+
+
+
+@code {
+    [Parameter]
+    public Guid Id { get; set; }
+    private string error { get; set; }
+
+    private Concierto concierto { get; set; }
+    private List<Cancion> canciones { get; set; } = new List<Cancion>();
+
+
+    protected override Task OnInitializedAsync()
+    {
+        concierto = conciertoData.GetConcierto(Id);
+        if (concierto != null)
+        {
+            var conciertoCanciones = conciertoCancionData.GetAllCancionesByIdConcierto(Id);
+            foreach (ConciertoCancion cc in conciertoCanciones.OrderBy(x => x.orden))
+            {
+                canciones.Add(cancionData.GetCancionFavorita(cc.IdCancion));
+            }
+        }
+        return base.OnInitializedAsync();
+    }
+
+
+
+
+
+}
+

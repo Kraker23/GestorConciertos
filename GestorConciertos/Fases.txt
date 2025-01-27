@@ -1,0 +1,20 @@
+Fase 1
+ -> Funcionamiento Basico y sencillo
+
+
+Fase 2 
+ -> Correccion de erores o de visualizacion
+    -> NavMenu, contraible
+    -> Icono Aplicacion
+    -> Texto mas grande en las letras
+    -> Controles de Edicion Concierto
+    -> Imagenes de Cantantes
+    -> Preview de Canciones
+    -> Texto por defecto en la busqueda
+    -> Quitar mensaje de carga
+
+Fase 3
+ -> Mejoras
+        -> Importacion y exportacion de datos para llevarlas a ordenador y viceversa
+        -> Modificacion de letras de Canciones
+        -> Importacion de Canciones 

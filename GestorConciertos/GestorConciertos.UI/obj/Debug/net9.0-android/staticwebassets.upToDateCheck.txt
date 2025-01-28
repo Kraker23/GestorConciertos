@@ -1,8 +1,0 @@
-E:\Code\GestorConciertos\GestorConciertos\GestorConciertos.UI\wwwroot\css\bootstrap\bootstrap.min.css
-E:\Code\GestorConciertos\GestorConciertos\GestorConciertos.UI\wwwroot\css\bootstrap\bootstrap.min.css.map
-E:\Code\GestorConciertos\GestorConciertos\GestorConciertos.UI\wwwroot\index.html
-E:\Code\GestorConciertos\GestorConciertos\GestorConciertos.UI\wwwroot\css\app.css
-wwwroot\css\app.css
-wwwroot\css\bootstrap\bootstrap.min.css
-wwwroot\css\bootstrap\bootstrap.min.css.map
-wwwroot\index.html

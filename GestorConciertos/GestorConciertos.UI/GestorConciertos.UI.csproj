@@ -45,11 +45,12 @@
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+        <PackageIcon>concierto.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
         <!-- App Icon -->
-        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+        <MauiIcon Include="Resources\AppIcon\concierto.png"  Resize="false"/>
 
         <!-- Splash Screen -->
         <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -66,6 +67,28 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Remove="Components\Layout\NavMenu - Copia.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Components\Layout\NavMenu - Copia.razor.css" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Resources\AppIcon\concierto.ico">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\concierto.png">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
@@ -76,6 +99,13 @@
       <ProjectReference Include="..\GestorConciertos.DM\GestorConciertos.DM.csproj" />
       <ProjectReference Include="..\GestorConciertos.Services\GestorConciertos.Services.csproj" />
       <ProjectReference Include="..\GestorConciertos.Shared\GestorConciertos.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Resources\AppIcon\concierto.png">
+        <PackagePath>\</PackagePath>
+        <Pack>True</Pack>
+      </None>
     </ItemGroup>
 
 </Project>

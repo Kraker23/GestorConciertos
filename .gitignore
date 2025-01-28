@@ -399,3 +399,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 GestorConciertos/GestorConciertos.UI/obj
+GestorConciertos/GestorConciertos.Services/obj
+GestorConciertos/GestorConciertos.Shared/obj

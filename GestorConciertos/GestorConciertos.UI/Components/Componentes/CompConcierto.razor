@@ -10,7 +10,7 @@
 @inject IJSRuntime JSRuntime
 @inject NavigationManager Navigation
 
-<RadzenCard Variant="Variant.Filled" Style="max-width: 420px">
+<RadzenCard Variant="Variant.Filled" Style="max-width: 300px">
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem">
         <RadzenStack Gap="0">
             <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Nombre</RadzenText>
@@ -19,16 +19,22 @@
             <RadzenText TextStyle="TextStyle.Body1"><b>@concierto?.Lugar</b></RadzenText>
             <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Fecha</RadzenText>
             <RadzenText TextStyle="TextStyle.Body1"><b>@concierto?.Fecha</b></RadzenText>
-            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Es Ensayo</RadzenText>
-            <RadzenCheckBox  @bind-Value=@concierto.esEnsayo  Disabled="true" /> 
-            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Canciones</RadzenText>
-            <RadzenText TextStyle="TextStyle.Body1"><b>@cantidadCanciones</b></RadzenText> 
-        </RadzenStack>
-    </RadzenStack>
-    <RadzenStack Gap="0">
+            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="20">   
+               <div> 
+                   <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Es Ensayo</RadzenText>
+                    <RadzenCheckBox  @bind-Value=@concierto.esEnsayo  Disabled="true" /> 
+               </div>
+               <div>
+                   <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Canciones</RadzenText>
+                   <RadzenText TextStyle="TextStyle.Body1"><b>@cantidadCanciones</b></RadzenText>             
+                </div>
+            </RadzenStack>
+       </RadzenStack>
+    </RadzenStack>  
+    <RadzenStack Gap="2">
 
     </RadzenStack>
-    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">        
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="2">        
         <RadzenButton Icon="visibility" Click="Ver" />
         <RadzenButton Icon="edit" Click="Editar" />
         <RadzenButton Icon="delete" Click="Eliminar" IconColor="@Colors.Danger"/>

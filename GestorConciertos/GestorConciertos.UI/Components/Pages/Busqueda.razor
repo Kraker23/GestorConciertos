@@ -36,7 +36,7 @@
 
     protected override Task OnInitializedAsync()
     {
-        NombreCancion = "Como Camaron Estopa";
+        //NombreCancion = "Como Camaron Estopa";
         return base.OnInitializedAsync();
     }
 
@@ -54,7 +54,7 @@
             cargando = "Cargando...";
             StateHasChanged();
             resultadoBusqueda = await ApiClient.GetBusqueda(NombreCancion);
-            // cargando = "Cargado";
+             cargando = string.Empty;
             BuscaquedaRealizada = true;
             StateHasChanged();
         }

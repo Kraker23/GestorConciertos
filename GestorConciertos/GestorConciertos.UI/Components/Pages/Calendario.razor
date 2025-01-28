@@ -7,9 +7,10 @@
 
 @if (conciertos != null && conciertos.Any())
 {
+    <label> Conciertos @conciertos.Count()</label>
 
-    <RadzenScheduler TItem="Appointment" Data=@appointments StartProperty="Start" EndProperty="End" style="height: 768px;"
-    TextProperty="Text" SelectedIndex="1" AppointmentRender=@OnAppointmentRender>
+                               <RadzenScheduler TItem="Appointment" Data=@appointments StartProperty="Start" EndProperty="End" style="height: auto;width:auto; "
+                TextProperty="Text" SelectedIndex="1" AppointmentRender=@OnAppointmentRender >
 
         <RadzenMonthView />
         <RadzenYearPlannerView StartMonth="Month.January" />

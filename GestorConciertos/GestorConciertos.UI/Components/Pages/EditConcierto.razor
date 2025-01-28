@@ -14,26 +14,24 @@
 
 @if (concierto != null)
 {
-    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Style="border: var(--rz-grid-cell-border);">
-        <RadzenFormField Text="Nombre" Variant="Variant.Outlined">
-            <RadzenTextBox @bind-Value="@concierto.Nombre" />
-        </RadzenFormField>
-        <RadzenFormField Text="Lugar" Variant="Variant.Outlined" Style="">
-            <RadzenTextBox @bind-Value="@concierto.Lugar" />
-        </RadzenFormField>
-        <RadzenFormField Text="Fecha" Variant="Variant.Outlined">
-            <RadzenDatePicker @bind-Value=@concierto.Fecha ShowTime="true"  HourFormat="12" DateFormat="dd/MM/yyyy hh:mm tt" Name="DatePickerHourFormat" />
-        </RadzenFormField>
+       <div class="row" sytle="margin-bot:10px">
+                <RadzenFormField Text="Nombre" Variant="Variant.Outlined" Style="max-width:300px;height:50px;margin-bot:10px">
+                <RadzenTextBox @bind-Value="@concierto.Nombre" />
+            </RadzenFormField>
+                            <RadzenFormField Text="Lugar" Variant="Variant.Outlined" Style="max-width:300px;height:50px;margin-bot:10px">
+                <RadzenTextBox @bind-Value="@concierto.Lugar" />
+            </RadzenFormField>
+                            <RadzenFormField Text="Fecha" Variant="Variant.Outlined" Style="max-width:220px;height:50px;margin-bot:10px">
+                <RadzenDatePicker @bind-Value=@concierto.Fecha ShowTime="true"  HourFormat="12" DateFormat="dd/MM/yyyy hh:mm tt" Name="DatePickerHourFormat" />
+            </RadzenFormField>
+                        <div style="max-width:150px;height:50px;margin-bot:10px; align-items: center;justify-content: center;display: flex;">
+                    <RadzenCheckBox @bind-Value=@concierto.esEnsayo />
+                <RadzenLabel Text="Es Ensayo" Component="CheckBox1" class="rz-ms-2" />
+            </div>
+            <RadzenButton Icon="save" Text="Guardar Concierto" Click="Guardar" IconColor="@Colors.Info"   Style="max-width:240px;height:50px;margin-bot:10px;margin-left:10px"/>
+    </div>
 
-        <div class="rz-p-12 rz-text-align-center">
-            <RadzenCheckBox @bind-Value=@concierto.esEnsayo />
-            <RadzenLabel Text="Es Ensayo" Component="CheckBox1" class="rz-ms-2" />
-        </div>
-
-        <RadzenButton Icon="save" Text="Guardar Concierto" Click="Guardar" IconColor="@Colors.Info" />
-    </RadzenStack>
-
-    <RadzenCard>
+    <RadzenCard Style="margin-top:10px">
         <RadzenPickList AllowMoveAll="false" AllowMoveAllSourceToTarget="false" AllowMoveAllTargetToSource="false" @bind-Source="@CancionesFavoritasDisponibles" @bind-Target="@CancionesSeleccionadas"
                         Style="height:500px; width:100%;" Orientation="Orientation.Horizontal"
                         TextProperty="@nameof(Cancion.FullName)" AllowFiltering="true" Multiple="true" ShowHeader="true"
@@ -50,8 +48,6 @@
             </Template>
         </RadzenPickList>
     </RadzenCard>
-
-
 
 }
 

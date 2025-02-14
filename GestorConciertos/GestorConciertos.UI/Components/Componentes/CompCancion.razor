@@ -10,7 +10,7 @@
 
 <RadzenCard Variant="Variant.Filled" Style="max-width: 420px">
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem">
-        <RadzenImage Path="@cancion?.PictureCantante" Style="width: 100px; height: 100px; border-radius: 50%;" Click="VerFoto" />
+        <RadzenImage Path="@cancion?.PictureCantante" Style="width: 100px; height: 100px; border-radius: 50%;" />
         <RadzenStack Gap="0">
             <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Cancion</RadzenText>
             <RadzenText TextStyle="TextStyle.Body1"><b>@cancion?.Nombre</b></RadzenText>
@@ -19,8 +19,7 @@
         </RadzenStack>
     </RadzenStack>
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
-        <audio controls="" name="media"> <source src="@cancion.preview" type="audio/mpeg" preload="none"></audio>
-        <RadzenButton Icon="music_note" Click="EscuhcarCancion" />
+        <audio controls="" name="media"> <source src="@cancion.preview" type="audio/mpeg" preload="none"></audio>        
         <RadzenButton Icon="lyrics" Click="verLetra" />
         <RadzenButton Icon="delete" Click="RemoveFavorita" IconColor="@Colors.Danger"/>
     </RadzenStack>
@@ -80,40 +79,7 @@
     private async void SinLetra()
     { await DialogService.Alert("No se ha encontrado la letra", "Letra no encontrada", new AlertOptions() { OkButtonText = "Yes" }); }
 
-    private async void EscuhcarCancion()
-    {
-        NotificationMessage notifyMessage = new NotificationMessage
-            {
-                Severity = NotificationSeverity.Info,
-                Summary = cancion.preview ?? string.Empty,
-                Duration = 4000
-            };
-        NotificationService.Notify(notifyMessage);
-
-        if (!string.IsNullOrWhiteSpace(cancion.preview))
-        {
-            Clipboard.SetTextAsync(cancion.preview);
-        }
-
-    }
-
-    private async void VerFoto()
-    {
-        NotificationMessage notifyMessage = new NotificationMessage
-            {
-                Severity = NotificationSeverity.Info,
-                Summary = cancion?.PictureCantante?? string.Empty,
-                Duration = 4000
-            };
-        NotificationService.Notify(notifyMessage);
-
-        if (!string.IsNullOrWhiteSpace(cancion?.PictureCantante))
-        {
-            Clipboard.SetTextAsync(cancion.PictureCantante);
-        }
-
-    
-    }
+   
 
     void OnDrag(System.Drawing.Point point)
     {

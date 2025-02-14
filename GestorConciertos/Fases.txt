@@ -4,12 +4,15 @@ Fase 1
 
 Fase 2 
  -> Correccion de erores o de visualizacion
-    -> Imagenes de Cantantes
-    -> Preview de Canciones
-
+    -> Borrar canciones Favoritas Peta
+    -> Configurar letras, espacios y tamaños
+    -> Cuando se hace una modificación de Editar/eliminar ( en concierto o algo similar) que se refresque el listado donde esta contenido
+	
 
 Fase 3
  -> Mejoras
         -> Importacion y exportacion de datos para llevarlas a ordenador y viceversa
         -> Modificacion de letras de Canciones
         -> Importacion de Canciones 
+
+

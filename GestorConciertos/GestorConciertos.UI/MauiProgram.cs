@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http.Headers;
 using GestorConciertos.DM;
 using GestorConciertos.Shared.BLInterface;
+using CommunityToolkit.Maui;
 
 namespace GestorConciertos
 {
@@ -17,6 +18,7 @@ namespace GestorConciertos
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkitMediaElement()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -27,8 +29,6 @@ namespace GestorConciertos
 
             //https://lyrics.ovh
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(ConfigurationApi.URL_Base) });
-
-
             try
             {
                 builder.Services.AddSingleton<IApiClient, ApiClient>();
@@ -41,7 +41,6 @@ namespace GestorConciertos
 
                 builder.Services.AddScoped<ICancionFavoritaManager, CancionFavoritaManager>();
                 builder.Services.AddScoped<IConciertoManager, ConciertoManager>();
-
 
 
 #if DEBUG

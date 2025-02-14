@@ -401,3 +401,6 @@ FodyWeavers.xsd
 GestorConciertos/GestorConciertos.UI/obj
 GestorConciertos/GestorConciertos.Services/obj
 GestorConciertos/GestorConciertos.Shared/obj
+GestorConciertos/GestorConciertos.UI/bin
+GestorConciertos/GestorConciertos.Shared/bin
+GestorConciertos/GestorConciertos.Services/bin

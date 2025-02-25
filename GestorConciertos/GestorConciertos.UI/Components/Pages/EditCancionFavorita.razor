@@ -1,0 +1,63 @@
+﻿@page "/EditCancionFavorita/{Id:guid}"
+@page "/EditCancionFavorita/"
+
+
+@inject ICancionFavoritaManager cancionFavoritaManager;
+@inject NotificationService NotificationService;
+@using Microsoft.JSInterop
+@using System.Text.Json
+@inject DialogService DialogService
+@inject IJSRuntime JSRuntime
+
+
+<RadzenCard >
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem">
+        <RadzenImage Path="@cancion?.PictureCantante" Style="width: 100px; height: 100px; border-radius: 50%;" />
+        <RadzenStack Gap="0">
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Cancion</RadzenText>
+            <RadzenTextBox TextStyle="TextStyle.Body1" @bind-value="@cancion.Nombre"/>
+
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Cantante</RadzenText>
+            <RadzenTextBox TextStyle="TextStyle.Body1" @bind-value="@cancion.Cantante"></RadzenTextBox>
+        </RadzenStack>
+
+    </RadzenStack>
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
+        <audio controls="" name="media"> <source src="@cancion.preview" type="audio/mpeg" preload="none"></audio>  
+        <RadzenButton Icon="save" Click="Guardar" />
+    </RadzenStack>    
+    <hr style="border: none; background-color: var(--rz-text-disabled-color); height: 1px; margin: 1rem 0;" />
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem">
+        <RadzenTextArea @bind-Value="@cancion.Letra" Style="field-sizing: content;border: none;font-size:30px" aria-label="Auto-resize" />
+    </RadzenStack>
+</RadzenCard>
+
+
+
+@code {
+
+    [Parameter]
+    public Guid Id { get; set; }
+    public Cancion cancion { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        cancion = cancionFavoritaManager.GetCancionFavorita(Id);
+        if (cancion == null)
+        {
+            cancion = new Cancion();
+        }
+        return base.OnInitializedAsync();
+    }
+
+
+    private async void Guardar()
+    {
+        cancion = cancionFavoritaManager.UpdateCancionFavorita(cancion);
+    }
+
+
+
+
+}
+

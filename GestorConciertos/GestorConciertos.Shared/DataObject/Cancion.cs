@@ -17,15 +17,5 @@
         public string FullName { get { return $"{Nombre} - {Cantante}"; } }
 
     }
-
-    public class ConciertoCancion
-    {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public Guid IdConcierto { get; set; }
-        public Guid IdCancion { get; set; }
-        public int orden { get; set; }
-    }
-
-
-    }
+}
 

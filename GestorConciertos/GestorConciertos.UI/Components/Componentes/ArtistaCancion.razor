@@ -21,7 +21,7 @@
     </RadzenStack>
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
         <audio controls="" name="media"> <source src="@cancionArtista.preview" type="audio/mpeg" preload="none"></audio>
-        <RadzenButton Icon="lyrics" Click="BuscarLetraFavorita"/>
+        <RadzenButton Icon="lyrics" Click="BuscarLetra"/>
         <RadzenButton Icon="star" Click="AddFavorita" /> @* IconColor="@colorFavorita"  *@
     </RadzenStack>
 </RadzenCard>
@@ -40,7 +40,7 @@
     }
     public async void AddFavorita()
     {
-        await BuscarLetraFavorita(false);
+        await BuscarLetra(false);
         if (!string.IsNullOrEmpty(letra))
         {
             cancionFavoritaManager.AddCancionFavorita(cancionArtista, letra);
@@ -53,12 +53,12 @@
             SinLetra();
         }
     }
-    public async void BuscarLetraFavorita()
+    public async void BuscarLetra()
     {
-        await BuscarLetraFavorita(true);
+        await BuscarLetra(true);
     }
 
-    public async Task BuscarLetraFavorita(bool mostrar = true)
+    public async Task BuscarLetra(bool mostrar = true)
     {
         var letraAux = await apiClient.GetLetraCancion(cancionArtista.title, cancionArtista.artist.name);
 
@@ -156,12 +156,5 @@
         await Task.CompletedTask;
 
         await JSRuntime.InvokeVoidAsync("window.localStorage.setItem", "DialogSettings", JsonSerializer.Serialize<DialogSettings>(Settings));
-    }
-    public class DialogSettings
-    {
-        public string Left { get; set; }
-        public string Top { get; set; }
-        public string Width { get; set; }
-        public string Height { get; set; }
     }
 }

@@ -1,10 +1,9 @@
-﻿ @using GestorConciertos.Shared;
+﻿@using GestorConciertos.Shared;
 @using GestorConciertos.Shared.DataApi
 
 @inject ICancionFavoritaManager cancionFavoritaManager;
 @inject NotificationService NotificationService;
-@using Microsoft.JSInterop
-@using System.Text.Json
+@inject NavigationManager Navigation
 @inject DialogService DialogService
 @inject IJSRuntime JSRuntime 
 
@@ -20,6 +19,7 @@
     </RadzenStack>
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="0">
         <audio controls="" name="media"> <source src="@cancion.preview" type="audio/mpeg" preload="none"></audio>        
+        <RadzenButton Icon="edit" Click="EditarCancion" />
         <RadzenButton Icon="lyrics" Click="verLetra" />
         <RadzenButton Icon="delete" Click="RemoveFavorita" IconColor="@Colors.Danger"/>
     </RadzenStack>
@@ -51,7 +51,7 @@
 
     public async void verLetra()
     {
-        if (cancion.Letra != null && !string.IsNullOrEmpty(cancion.Letra) )
+        if (cancion.Letra != null && !string.IsNullOrEmpty(cancion.Letra))
         {
             await LoadStateAsync();
             await DialogService.OpenAsync<DialogCancionLetra>("",
@@ -78,8 +78,12 @@
 
     private async void SinLetra()
     { await DialogService.Alert("No se ha encontrado la letra", "Letra no encontrada", new AlertOptions() { OkButtonText = "Yes" }); }
-
-   
+    
+    
+    private async void EditarCancion()
+    {
+        Navigation.NavigateTo($"/EditCancionFavorita/{cancion.Id}");
+    }
 
     void OnDrag(System.Drawing.Point point)
     {
@@ -146,11 +150,5 @@
 
         await JSRuntime.InvokeVoidAsync("window.localStorage.setItem", "DialogSettings", JsonSerializer.Serialize<DialogSettings>(Settings));
     }
-    public class DialogSettings
-    {
-        public string Left { get; set; }
-        public string Top { get; set; }
-        public string Width { get; set; }
-        public string Height { get; set; }
-    }
+   
 }

@@ -50,12 +50,12 @@ namespace GestorConciertos.Services
 
         public void RemoveCancionFavorita(Guid IdCancion)
         {
-            throw new NotImplementedException();
+            cancionData.RemoveCancionFavorita(IdCancion);
         }
 
         public Cancion UpdateCancionFavorita(Cancion cancion)
         {
-            throw new NotImplementedException();
+            return cancionData.UpdateCancionFavorita(cancion);
         }
     }
 }

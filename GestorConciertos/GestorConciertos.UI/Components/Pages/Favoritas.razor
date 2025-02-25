@@ -4,6 +4,7 @@
 @using GestorConciertos.Services
 @using GestorConciertos.Shared.DataApi
 @inject ICancionFavoritaManager cancionFavoritaManager
+@inject NavigationManager Navigation
 
 <label> @cargando</label>
 <label> @error</label>
@@ -11,11 +12,13 @@
 @if (favoritas != null && favoritas.Any())
 {
     <div>
+        <RadzenButton Icon="add" Text="Crear Cancion" Click="CrearFavorita" />
         <label> Canciones Favoritas @favoritas.Count()</label>
+
         <div class="row">
             @foreach (Cancion item in favoritas)
             {
-                <CompCancion cancion="@item" />
+                <CompCancionFavorita cancion="@item" />
             }
         </div>
     </div>
@@ -34,7 +37,10 @@
         return base.OnInitializedAsync();
     }
 
-  
+    private async void CrearFavorita()
+    {
+        Navigation.NavigateTo($"/EditCancionFavorita/{Guid.NewGuid()}");
+    }
 
 }
 

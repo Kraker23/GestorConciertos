@@ -15,7 +15,7 @@
         <div class="row">
             @foreach (Concierto item in conciertos.OrderByDescending(x=>x.Fecha))
             {
-                <CompConcierto concierto="@item" /> 
+                <CompConcierto concierto="@item"  BorrarConcierto="BorrarConciertoEvent"/> 
             }
         </div>
     </div>
@@ -37,9 +37,13 @@
 
     public void CrearConcierto()
     {
-        //Navigation.NavigateTo($"/editConcierto");
         Navigation.NavigateTo($"/editConcierto/{Guid.NewGuid()}");
     }
-
+    public void BorrarConciertoEvent()
+    {
+        conciertos = conciertoData.GetConciertos();
+        StateHasChanged();
+        Navigation.NavigateTo($"/editConcierto/{Guid.NewGuid()}");
+    }
 }
 

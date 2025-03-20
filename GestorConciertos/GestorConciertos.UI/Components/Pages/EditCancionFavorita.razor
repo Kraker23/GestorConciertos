@@ -28,7 +28,7 @@
     </RadzenStack>    
     <hr style="border: none; background-color: var(--rz-text-disabled-color); height: 1px; margin: 1rem 0;" />
     <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem">
-        <RadzenTextArea @bind-Value="@cancion.Letra" Style="field-sizing: content;border: none;font-size:30px" aria-label="Auto-resize" />
+        <RadzenTextArea @bind-Value="@cancion.Letra" Style="field-sizing: content;border: none;font-size:30px;min-height:30px;min-width:30px;border-color:black;border:solid;border-width:1px;" aria-label="Auto-resize" />
     </RadzenStack>
 </RadzenCard>
 
@@ -46,6 +46,7 @@
         if (cancion == null)
         {
             cancion = new Cancion();
+            cancion.Letra = $"{Environment.NewLine}";
         }
         return base.OnInitializedAsync();
     }

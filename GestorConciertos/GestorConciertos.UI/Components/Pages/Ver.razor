@@ -15,7 +15,7 @@
             <RadzenIcon Icon="radio" class="rz-me-1" /><b>@($"{concierto.Nombre} - {concierto.Lugar} - {concierto.Fecha}")</b>
     </RadzenText>
 
-        <RadzenDataList PageSize="1" WrapItems="true" AllowPaging="true"  Data="@canciones" TItem="Cancion" PagerPosition="PagerPosition.Top">
+        <RadzenDataList PageSize="1" WrapItems="true" AllowPaging="true"  Data="@canciones" TItem="Cancion" PagerPosition="PagerPosition.TopAndBottom">
             <Template Context="cancion">
                 <RadzenCard >
                     <RadzenRow>

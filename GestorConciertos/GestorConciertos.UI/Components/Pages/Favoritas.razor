@@ -18,7 +18,7 @@
         <div class="row">
             @foreach (Cancion item in favoritas)
             {
-                <CompCancionFavorita cancion="@item" />
+                <CompCancionFavorita cancion="@item" BorrarFavorita="@BorrarFavoritaEvent" />
             }
         </div>
     </div>
@@ -42,5 +42,10 @@
         Navigation.NavigateTo($"/EditCancionFavorita/{Guid.NewGuid()}");
     }
 
+    private async void BorrarFavoritaEvent()
+    {
+        favoritas = cancionFavoritaManager.GetCancionesFavoritas();
+        StateHasChanged();
+    }
 }
 

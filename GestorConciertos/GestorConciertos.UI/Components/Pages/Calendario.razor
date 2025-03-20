@@ -3,24 +3,26 @@
 @using GestorConciertos.Services
 @inject IConciertoData conciertoData
 @inject NavigationManager Navigation
-
+@inject DialogService DialogService
 
 @if (conciertos != null && conciertos.Any())
 {
-    <label> Conciertos @conciertos.Count()</label>
+        <label> Conciertos @conciertos.Count()</label>
+              <RadzenScheduler @ref=@scheduler TItem="Appointment" Data=@appointments StartProperty="Start" EndProperty="End" style="height: 768px;;width:auto; "
+                    TextProperty="Text" SelectedIndex="1" AppointmentRender=@OnAppointmentRender 
+                                           SlotRender=@OnSlotRender AppointmentSelect=@OnAppointmentSelect 
+                                   >
 
-                               <RadzenScheduler TItem="Appointment" Data=@appointments StartProperty="Start" EndProperty="End" style="height: auto;width:auto; "
-                TextProperty="Text" SelectedIndex="1" AppointmentRender=@OnAppointmentRender >
-
-        <RadzenMonthView />
-        <RadzenYearPlannerView StartMonth="Month.January" />
-        <RadzenYearTimelineView StartMonth="Month.January" />
-        <RadzenYearView />
-    </RadzenScheduler> 
+            <RadzenMonthView />
+            <RadzenYearPlannerView StartMonth="Month.January" />
+            <RadzenYearTimelineView StartMonth="Month.January" />
+            <RadzenYearView />
+        </RadzenScheduler> 
 }
 
 
 @code {
+    RadzenScheduler<Appointment> scheduler;
     IList<Appointment> appointments = new List<Appointment>();
 
     public List<Concierto> conciertos { get; set; }
@@ -30,7 +32,7 @@
         conciertos = conciertoData.GetConciertos();
         foreach (Concierto concierto in conciertos)
         {
-            var appointment = new Appointment { Start = concierto.Fecha, End = concierto.Fecha.AddHours(3), Text = concierto.Fullname ,tag=concierto};
+            var appointment = new Appointment { Start = concierto.Fecha, End = concierto.Fecha.AddHours(3), Text = concierto.Fullname, tag = concierto };
 
             appointments.Add(appointment);
         }
@@ -40,7 +42,7 @@
     }
     void OnAppointmentRender(SchedulerAppointmentRenderEventArgs<Appointment> args)
     {
-        if (args.Data.tag.GetType()==typeof(Concierto))
+        if (args.Data.tag.GetType() == typeof(Concierto))
         {
             Concierto concierto = (Concierto)args.Data.tag;
             if (concierto.esEnsayo)
@@ -54,8 +56,30 @@
         }
     }
 
-    
-   
+    void OnSlotRender(SchedulerSlotRenderEventArgs args)
+    {
+        // Highlight today in month view
+        // if (args.View.Text == "Month")// && args.Start.Date == DateTime.Today)
+        // {
+        //     args.Attributes["style"] = "background: var(--rz-scheduler-highlight-background-color, rgba(255,220,40,.2));";
+        // }
+
+        // // Draw a line for new year if start month is not January
+        // if ((args.View.Text == "Planner" || args.View.Text == "Timeline") )//&& args.Start.Month == 12 )//&& startMonth != Month.January)
+        // {
+        //     args.Attributes["style"] = "border-bottom: thick double var(--rz-base-600);";
+        // }
+    }
+
+    async Task OnAppointmentSelect(SchedulerAppointmentSelectEventArgs<Appointment> args)
+    {
+            //     <CompConcierto concierto="@item"  BorrarConcierto="BorrarConciertoEvent"/> 
+        Concierto concierto = (Concierto)args.Data.tag;
+        await DialogService.OpenAsync<CompConcierto>("CompConcierto", new Dictionary<string, object> { { "concierto", concierto } });
+
+        await scheduler.Reload();
+    }
+
 
 }
 

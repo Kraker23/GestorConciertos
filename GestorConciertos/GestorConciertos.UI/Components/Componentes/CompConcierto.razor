@@ -20,16 +20,16 @@
             <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Fecha</RadzenText>
             <RadzenText TextStyle="TextStyle.Body1"><b>@concierto?.Fecha</b></RadzenText>
             <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Left" Gap="20">   
-               <div> 
-                   <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Es Ensayo</RadzenText>
+                <div> 
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Es Ensayo</RadzenText>
                     <RadzenCheckBox  @bind-Value=@concierto.esEnsayo  Disabled="true" /> 
-               </div>
-               <div>
-                   <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Canciones</RadzenText>
-                   <RadzenText TextStyle="TextStyle.Body1"><b>@cantidadCanciones</b></RadzenText>             
+                </div>
+                <div>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Canciones</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>@cantidadCanciones</b></RadzenText>             
                 </div>
             </RadzenStack>
-       </RadzenStack>
+        </RadzenStack>
     </RadzenStack>  
     <RadzenStack Gap="2">
 
@@ -47,6 +47,8 @@
 
     [Parameter]
     public GestorConciertos.Shared.DataObject.Concierto concierto { get; set; }
+    [Parameter]
+    public EventCallback BorrarConcierto { get; set; }
     public int cantidadCanciones { get; set; }  
 
     bool value;
@@ -66,6 +68,7 @@
                     Severity = NotificationSeverity.Success,
                     Summary = "Eliminado el Concierto", Duration = 4000 };
             NotificationService.Notify(notifyMessage);
+            await BorrarConcierto.InvokeAsync();
         }
 
     }

@@ -29,11 +29,11 @@
 @code {
     [Parameter]
     public GestorConciertos.Shared.DataObject.Cancion cancion { get; set; }
-
+    [Parameter]
+    public EventCallback BorrarFavorita { get; set; }
 
     public async void RemoveFavorita()
     {
-
         bool? result = await DialogService.Confirm("¿Estás seguro de que quieres eliminar la cancion del listado de Favoritas?", "Eliminar Cancion Favorita", new ConfirmOptions() { OkButtonText = "Si", CancelButtonText = "No" });
         if (result.HasValue && result.Value)
         {
@@ -45,6 +45,7 @@
                     Duration = 4000
                 };
             NotificationService.Notify(notifyMessage);
+            await BorrarFavorita.InvokeAsync();
         }
     }
 
